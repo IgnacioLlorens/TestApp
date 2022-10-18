@@ -1,0 +1,48 @@
+
+
+<ion-content id="cuerpo">
+  <div class="fondo">
+  <ion-card>
+    <img class="imagen_login" src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png"/>
+    <ion-card-content>
+      <h1>Iniciar sesion</h1>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" placeholder="ingrese usuario" [(ngModel)]="usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">contaseña</ion-label>
+        <ion-input type="password" [(ngModel)]="pass"></ion-input>
+      </ion-item>
+      <div>
+      <ion-button (click)="login()" expand="block">ingresar</ion-button>
+      <ion-button id="open-modal" expand="block" >Registrarse</ion-button>
+      <a class="olvidaste" routerLink='/recuperar'>¿Olvidaste tu contraseña?</a>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-buttons>
+            <ion-button slot="end" (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <h4 style="text-align:center">registrarse como...</h4>
+          <ion-item>
+            <ion-icon name="walk-outline" size="large"></ion-icon>
+            <ion-button (click)="modal.dismiss()" routerLink='/registrar'>registrarse como pasajero</ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="car-sport" size="large"></ion-icon>
+            <ion-button (click)="modal.dismiss()" routerLink='/registrocon'>registrarse como conductor</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

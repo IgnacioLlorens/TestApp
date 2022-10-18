@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mantenedor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <ion-label position="fixed">rut</ion-label>
+      <ion-input [(ngModel)]="persona.rut" type="text" placeholder="ingrese rut"></ion-input>
+
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">nombre</ion-label>
+      <ion-input [(ngModel)]="persona.nombre" type="text" placeholder="nombre"></ion-input>
+
+    </ion-item>
+    <ion-button (click)="registrar()">registrar</ion-button>
+    <ion-button (click)="modificar()">modificar</ion-button>
+
+  </ion-card>
+
+  <h1>info personas</h1>
+  <ion-list *ngFor="let p of personas">
+    <ion-item (click)="buscar(p.rut)">
+      <p>rut:{{p.rut}} - nombre:{{p.nombre}} </p>
+      <ion-button (click)="eliminar(p.rut)">eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

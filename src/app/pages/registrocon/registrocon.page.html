@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>registrar</ion-title>
+    <ion-button slot="end" routerLink="/login">
+      <ion-icon name="arrow-back-circle-sharp"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="fondo">
+   <ion-card class="formulario">
+      <form [formGroup]="alumno" (ngSubmit)="registrar()">
+          <ion-item>
+            <ion-label position="floating">Rut</ion-label>
+            <ion-input type="text" placeholder="1234567-9" formControlName="rut"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input type="text" formControlName="nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Correo Institucional</ion-label>
+            <ion-input type="text" formControlName="correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">fecha de nacimiento</ion-label>
+            <ion-input type="date" formControlName="fechaNacimiento" ></ion-input>
+          </ion-item>
+          <ion-list>
+            <ion-radio-group  value="Genero" class="genero" formControlName="genero">
+              <ion-list-header>
+                <ion-label>Genero:</ion-label>
+              </ion-list-header>
+            
+              <ion-item>
+                <ion-label>Hombre</ion-label>
+                <ion-radio slot="start"  color="success" value="hombre"></ion-radio>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label>Mujer</ion-label>
+                <ion-radio slot="start"  color="danger" value="mujer"></ion-radio>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label>No especifica</ion-label>
+                <ion-radio slot="start"  value="N/A"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+          <ion-item>
+            <ion-label position="floating">numero de cedula de conducir</ion-label>
+            <ion-input type="number" formControlName="idlicencia"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contaseña</ion-label>
+            <ion-input type="password" formControlName="pass"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Repita contaseña</ion-label>
+            <ion-input type="password" [(ngModel)]="pass2" [ngModelOptions]="{standalone: 'true'}"></ion-input>
+          </ion-item>
+
+        <ion-button type="submit" [disabled]="!alumno.valid">Registrar</ion-button>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <h1></h1>
+      <ion-list *ngFor="let aux of viajes">
+        <ion-card>
+          <p>conductor: {{aux.nombre}}</p>
+          <p>precio: {{aux.costo}}</p>
+         <p>destino: {{aux.fin}}</p>
+         <p>capasidad {{aux.pasajeros.length}}/{{aux.capasidad}}</p>
+         <ion-button (click)="rescate(aux.fin,aux.cod)">
+          <ion-icon name="eye-outline"></ion-icon>
+         </ion-button>
+         <ion-button *ngIf="aux.isfull != true " (click)="subir(aux.cod)">subir</ion-button>
+        </ion-card>
+      </ion-list>
+  </div>
+</ion-content>

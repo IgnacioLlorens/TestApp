@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>geoloca</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <input type="text" id="autocompletar">
+  <ion-button expand="block" (click)="calcularRuta()">ir</ion-button>
+  <div id="contenedormapa">
+    <div id="map"></div>
+  </div>
+  <div id="indicaciones"></div>
+  <div>
+      <ion-toolbar>
+        <ion-title>Termina de crear tu viaje!</ion-title>
+      </ion-toolbar>
+      <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Costo</ion-label>
+            <ion-input type="number" placeholder="Dale un valor a tu viaje" [(ngModel)]="viaje.costo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Selecciona tu auto</ion-label>
+            <ion-select [(ngModel)]="viaje.auto">
+              <ion-item *ngFor="let aux of cualquiera">
+                <ion-select-option *ngIf="aux.dueno == ruteo">{{aux.patente}}</ion-select-option>
+              </ion-item>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+  </div>
+  <ion-button id="open-modala" expand="block" (click)="viajero()">Crear viaje</ion-button>
+</ion-content>

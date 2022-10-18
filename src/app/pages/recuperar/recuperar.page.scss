@@ -1,0 +1,71 @@
+@use '../../../global.scss';
+
+.fondo{
+    height: 100vh;
+    background: linear-gradient(rgb(19, 51, 36), rgb(27, 170, 115));
+    text-align: center;
+}
+
+ion-card{   
+    margin: 0 auto;
+    top: 5vh;
+    height: 80vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .imagen_login{
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    ion-item{
+        --background: none;
+        margin-bottom: 20px;
+        ion-label{
+            
+            font-size: large;
+            font-weight: bold;
+        }
+    }
+    a{
+        text-decoration: none;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+    ion-button{
+        --background: green;
+        align-items: center;
+        text-align: center;
+        
+    }
+}
+
+ion-modal{
+    --height: 190px;
+    ion-item{
+        text-align: justify;
+        flex: content;
+    }
+
+    ion-button{
+        --align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px
+    }
+}
+
+
+@media(max-width: 420px){
+    .fondo{
+        ion-card{
+            width: 40vh;
+        }
+    }
+}
+
+

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Recuperar</ion-title>
+    <ion-button slot="end" routerLink="/login">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="fondo">
+      <ion-card>
+        <img src="../../../assets/img/correo.png" alt="Imagen de correo" class="imagen_login" />
+        <ion-card-header>
+          <ion-card-title>Ingrese el correo de registro</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input type="text" placeholder="Ingrese Correo"></ion-input>
+          </ion-item>
+          <div>
+            <ion-button id="open-modala">Ingresar</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>
+
+<ion-modal #modal trigger="open-modala">
+  <ng-template>
+    <ion-content>
+      <ion-toolbar>
+        <ion-title>Correo enviado.</ion-title>
+      </ion-toolbar>
+      <ion-list>
+        <ion-item>
+          <p>Si tu correo esta registrado recibiras el codigo de recuperacion!</p>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="modal.dismiss()">Entendido!</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

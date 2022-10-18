@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-label>Bienvenido: {{usuario.nombre}}</ion-label>
+    <ion-button slot="end" (click)="logout()">
+      <ion-icon name="exit-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="perfil/{{usuario.rut}}" >
+        <ion-icon name="people-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button *ngIf="usuario.tipo_usuario == 'administrador'" tab="home">
+        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+        <ion-label>administrar</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button *ngIf="usuario.tipo_usuario == 'Conductor'" tab="listauto/{{usuario.rut}}" >
+        <ion-icon name="car-sport"></ion-icon>
+        <ion-label>Mis autos</ion-label>
+        <ion-badge>2</ion-badge>
+      </ion-tab-button>
+
+      <ion-tab-button *ngIf="usuario.tipo_usuario == 'Conductor'" tab="viaje/{{usuario.rut}}" >
+        <ion-icon name="compass-outline"></ion-icon>
+        <ion-label>viajes</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button *ngIf="usuario.tipo_usuario == 'Pasajero'" tab="viajes/{{usuario.rut}}" >
+        <ion-icon name="compass-outline"></ion-icon>
+        <ion-label>viajes</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>
