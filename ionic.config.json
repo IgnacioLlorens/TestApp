@@ -1,0 +1,7 @@
+{
+  "name": "PagoApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

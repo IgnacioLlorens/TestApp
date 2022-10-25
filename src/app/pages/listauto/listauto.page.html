@@ -1,0 +1,26 @@
+
+<ion-fab vertical="bottom" horizontal="start" slot="fixed">
+  <ion-fab-button (click)="recargar()">
+    <ion-icon name="refresh-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-content>
+  <h1>Mis Autos</h1>
+  <ion-list *ngFor="let aux of autos">
+    <ion-card *ngIf="aux.dueno == rut">
+     <p>Patente: {{aux.patente}}</p>
+     <p>Marca: {{aux.marca}}</p>
+     <p>Color: {{aux.color}}</p>
+     <p>capacidad: {{aux.capasidad}}</p>
+     <ion-button color="danger" (click)="eliminar(aux.patente)">Eliminar</ion-button>
+    </ion-card>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="masautos()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

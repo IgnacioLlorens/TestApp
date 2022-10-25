@@ -1,0 +1,99 @@
+@use '../../../global.scss';
+
+.fondo{
+    height: 100vh;
+    background: linear-gradient(to bottom right,rgb(255, 255, 255),rgb(27, 170, 115), rgb(17, 82, 57),rgb(2, 39, 14))
+}
+
+ion-card{ 
+    
+    --background:0;
+    flex: 1;
+    height: 70vh;
+    width: 80vh;
+    margin: auto;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h1{
+        text-align: center;
+        color: black;
+    }
+
+    .imagen_login{
+        
+        justify-content: center;
+        opacity: 0.8;
+        height: 25vh;
+        
+       
+    }
+
+    
+
+    ion-item{
+        --background: none;
+        top: 0vh;
+        ion-label{
+            font-weight: 900;
+            text-align: center;
+            
+        }
+    }
+    a{
+        text-decoration: none;
+        font-size: medium;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+
+    ion-button{
+        margin: 20px;
+        height: 5vh;
+        --background: linear-gradient(to right bottom,rgb(158, 239, 253),rgb(162, 255, 235),rgb(2, 19, 68));
+        align-items: center;
+        color: black;
+        text-align: center;
+        flex-direction: column;
+    }
+
+   
+}
+
+ion-modal{
+    --height: 200px;
+    ion-button{
+        --align-items: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px
+    }
+}
+
+
+
+@media(max-width: 430px){
+    .fondo{
+        ion-card{
+            width: 45vh;
+            height: 80vh;
+        }
+    }
+    ion-card{ 
+    
+        --background:0;
+        height: 90vh;
+        width: 80vh;
+        margin: auto;
+        top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;}
+}
+
+

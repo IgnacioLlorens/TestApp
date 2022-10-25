@@ -1,0 +1,26 @@
+ion-content{
+    
+    #contenedormapa{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #map{
+        
+        width: 100%;
+        height: 100%;
+        display: block;
+        
+        
+    }
+    #indicaciones{
+        width: 40%;
+        height: 40%;
+        overflow-y: auto;
+        padding: 10px;
+        display: block;
+    }
+}

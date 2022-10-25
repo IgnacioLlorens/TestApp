@@ -1,0 +1,50 @@
+
+<ion-content>
+  <div id="contenedormapa" *ngIf="usuario.viaje != ''">
+    <div id="map3"></div>
+  </div>
+  
+    <div *ngIf="usuario.viaje == ''">
+      <h1 style="justify-content: center"> Viajes</h1>
+        <ion-list *ngFor="let aux of viajes">
+          <ion-card *ngIf="aux.estado == 'espera'">
+            <p>conductor: {{aux.nombre}}</p>
+            <p>precio: {{aux.costo}}</p>
+           <p>destino: {{aux.fin}}</p>
+           <p>capasidad {{aux.pasajeros.length}}/{{aux.capasidad}}</p>
+           <ion-button (click)="rescate(aux.fin,aux.cod)">
+            <ion-icon name="eye-outline"></ion-icon>
+           </ion-button>
+           <ion-button *ngIf="aux.isfull != true " (click)="subir(aux.cod)">subir</ion-button>
+          </ion-card>
+        </ion-list>
+    </div>
+      
+      <div>
+        <ion-card *ngIf="viajesn == 0">
+          <ion-card-header>
+            <ion-card-title>No hay viajes disponibles, intenta mas tarde!</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </div>
+      <div id="carta">
+        <ion-card *ngIf="usuario.viaje.length == undefined">
+          <ion-card-header>
+            <ion-card-title>Conductor: {{viaje.nombre}}   Auto: {{viaje.auto}}</ion-card-title>
+            <ion-card-subtitle>Codigo de viaje: {{viaje.cod}}</ion-card-subtitle>
+            <ion-card-subtitle>rut conductor: {{viaje.conductor}}</ion-card-subtitle>
+            <ion-card-subtitle>destino: {{viaje.fin}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+
+          </ion-card-content>
+            <ion-button (click)="pagar()">pagar</ion-button>
+            <ion-button (click)="bajar()">bajar</ion-button>
+        </ion-card>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="recargar()">
+        <ion-icon name="refresh-circle-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
